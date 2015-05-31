@@ -5,7 +5,7 @@
     Author     : Marcelo Beltrame
 --%>
 <%
-    Boolean result = usuarios.excluir(request.getParameter("nome").toString());
+    Boolean result = usuarios.excluir(Integer.parseInt(request.getParameter("id").toString()));
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,16 +17,15 @@
     </head>
     <body class="content text-center">
         <h1>Exclusão!</h1>
-        
-        
+
         <%
            if(!result){               
         %>
-        Erro ao tentar excluir o usuário!</br></br><a class="btn btn-success" href="lista.jsp"> Voltar a lista e tentar novamente </a>
+        Erro ao tentar excluir o usuário!</br></br><a class="btn btn-danger" href="lista.jsp"> Voltar a lista e tentar novamente </a>
         <%
            }else{   
         %>
-        Usuário excluido com sucesso!</br></br><a class="btn btn-success" href="lista.jsp"> Voltar a lista e tentar novamente </a>
+        Usuário excluido com sucesso!</br></br><a class="btn btn-success" href="lista.jsp"> Voltar a lista</a>
         <%
             }
         %>

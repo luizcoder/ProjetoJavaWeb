@@ -7,9 +7,16 @@
 <%
     
 String[][] usuario = usuarios.obterUsuario(Integer.parseInt(request.getParameter("id").toString()));
+    usuario[0][3] = "same"; 
 
-
+    String status_ativo = "";
+    String status_inativo = "";
     
+    if(Integer.parseInt(usuario[0][5]) == 1){
+        status_ativo = "selected";
+    }else{
+       status_inativo = "selected";
+    }
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -32,8 +39,8 @@ String[][] usuario = usuarios.obterUsuario(Integer.parseInt(request.getParameter
               <input value="<%=usuario[0][2]%>" name="login" type="text" class="form-control" placeholder="Digite o login">
             </div>   
             <div class="form-group">
-              <label>Senha</label>
-              <input value="<%=usuario[0][3]%>" name="senha" type="pasword" class="form-control">
+                <label>Senha</label>
+              <input value="<%=usuario[0][3]%>" name="senha" type="password" class="form-control">
             </div>  
             <div class="form-group">
               <label>Data de admissão</label>
@@ -42,8 +49,8 @@ String[][] usuario = usuarios.obterUsuario(Integer.parseInt(request.getParameter
             <div class="form-group">
               <label>Status</label>
               <select name="status" class="form-control">
-                  <option value="1" <%if(usuario[0][5] == "1"){out.println("selected");}%>>Ativo</option>
-                  <option value="0" <%if(usuario[0][5] == "0"){out.println("selected");}%>> Inativo </option>
+                  <option value="1" <%=status_ativo%>>Ativo</option>
+                  <option value="0" <%=status_inativo%>> Inativo </option>
                   
               </select>            
             </div>              

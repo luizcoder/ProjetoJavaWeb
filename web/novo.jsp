@@ -18,7 +18,7 @@
         <form method="post" action="cadastrar.jsp">
             <div class="form-group">
               <label>Nome</label>
-              <input name="nome" type="text" class="form-control" placeholder="Digite o nome completo">
+              <input  name="nome" type="text" class="form-control" placeholder="Digite o nome completo">
             </div>
             <div class="form-group">
               <label>Login</label>
@@ -26,7 +26,7 @@
             </div>   
             <div class="form-group">
               <label>Senha</label>
-              <input name="senha" type="pasword" class="form-control">
+              <input name="senha" type="password" class="form-control">
             </div>  
             <div class="form-group">
               <label>Data de admissão</label>
@@ -40,7 +40,6 @@
                   
               </select>            
             </div>              
-           
             <button type="submit" class="btn btn-success">Salvar</button>
             <a href="index.jsp" class="btn btn-danger">Cancelar e voltar ao inicio</button>
 

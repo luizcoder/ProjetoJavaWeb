@@ -36,12 +36,18 @@
         <%
 
             String[][] lista = usuarios.listarUsuarios();
- 
+                
             for(int i = 0; i < lista.length; i++){
                 out.println("<tr>");
                 out.println("<td> " + lista[i][0] + "</td>");
                 out.println("<td> " + lista[i][1] + "</td>");  
-                out.println("<td> " + lista[i][2] + "</td>");                               
+                out.println("<td> " + lista[i][2] + "</td>");
+                if(lista[0][4].length()>= 10 && lista[0][4].indexOf('-')> 1){
+                    String[] dt = lista[0][4].split("-");
+                    String data_admissao = dt[2] + "/" + dt[1] + "/" + dt[0];
+                    lista[0][4] = data_admissao;
+                }
+                    
                 out.println("<td> " + lista[i][4] + "</td>");
                 String status = "Ativo";
                 if(Integer.parseInt(lista[i][5]) == 0 )
